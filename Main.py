@@ -24,7 +24,11 @@ while True:
         time.sleep(0.01)
 
     else:
-        window.cancel_methods()
+        if window.create_triangle_enemies_func != 0:
+            window.cancel_methods()
+        else:
+            window.pre_cancel_methods()
+
         if messagebox.askyesno("Game Over", "GAME OVER\nDo you wish to play again?"):
             window.reset(player, score)
             window.start_methods()

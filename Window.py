@@ -80,6 +80,12 @@ class Window:
         self.tk.after_cancel(self.make_enemy_shoot_func)
         self.tk.after_cancel(self.create_triangle_enemies_func)
 
+    def pre_cancel_methods(self):
+        self.tk.after_cancel(self.create_square_enemies_func)
+        self.tk.after_cancel(self.move_square_enemies_func)
+        self.tk.after_cancel(self.move_boundary_func)
+        self.tk.after_cancel(self.make_enemy_shoot_func)
+
     def start_methods(self):
         self.create_square_enemies()
         self.move_square_enemies()
